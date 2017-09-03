@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.26730.12
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebAPI-001", "WebAPI-001\WebAPI-001.csproj", "{22EBCE1A-7450-45E8-B839-B5D639A5493B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WebAPI_001", "WebAPI-001\WebAPI_001.csproj", "{22EBCE1A-7450-45E8-B839-B5D639A5493B}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
