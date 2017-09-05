@@ -7,10 +7,12 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using WebAPI_001.Models;
 
+// For more information on enabling Web API for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+
 namespace WebAPI_001.Controllers
 {
     [Produces("application/json")]
-    [Route("api/Customers")]
+    [Route("api/[controller]")]
     public class CustomersController : Controller
     {
         private readonly NorthwindContext _context;
@@ -22,7 +24,7 @@ namespace WebAPI_001.Controllers
 
         // GET: api/Customers
         [HttpGet]
-        public IEnumerable<Customers> GetCustomers()
+        public IEnumerable<Customer> GetCustomers()
         {
             return _context.Customers;
         }
@@ -36,7 +38,7 @@ namespace WebAPI_001.Controllers
                 return BadRequest(ModelState);
             }
 
-            var customers = await _context.Customers.SingleOrDefaultAsync(m => m.CustomerId == id);
+            var customers = await _context.Customers.SingleOrDefaultAsync(m => m.CustomerID == id);
 
             if (customers == null)
             {
@@ -48,14 +50,14 @@ namespace WebAPI_001.Controllers
 
         // PUT: api/Customers/5
         [HttpPut("{id}")]
-        public async Task<IActionResult> PutCustomers([FromRoute] string id, [FromBody] Customers customers)
+        public async Task<IActionResult> PutCustomers([FromRoute] string id, [FromBody] Customer customers)
         {
             if (!ModelState.IsValid)
             {
                 return BadRequest(ModelState);
             }
 
-            if (id != customers.CustomerId)
+            if (id != customers.CustomerID)
             {
                 return BadRequest();
             }
@@ -83,7 +85,7 @@ namespace WebAPI_001.Controllers
 
         // POST: api/Customers
         [HttpPost]
-        public async Task<IActionResult> PostCustomers([FromBody] Customers customers)
+        public async Task<IActionResult> PostCustomers([FromBody] Customer customers)
         {
             if (!ModelState.IsValid)
             {
@@ -97,7 +99,7 @@ namespace WebAPI_001.Controllers
             }
             catch (DbUpdateException)
             {
-                if (CustomersExists(customers.CustomerId))
+                if (CustomersExists(customers.CustomerID))
                 {
                     return new StatusCodeResult(StatusCodes.Status409Conflict);
                 }
@@ -107,7 +109,7 @@ namespace WebAPI_001.Controllers
                 }
             }
 
-            return CreatedAtAction("GetCustomers", new { id = customers.CustomerId }, customers);
+            return CreatedAtAction("GetCustomers", new { id = customers.CustomerID }, customers);
         }
 
         // DELETE: api/Customers/5
@@ -119,7 +121,7 @@ namespace WebAPI_001.Controllers
                 return BadRequest(ModelState);
             }
 
-            var customers = await _context.Customers.SingleOrDefaultAsync(m => m.CustomerId == id);
+            var customers = await _context.Customers.SingleOrDefaultAsync(m => m.CustomerID == id);
             if (customers == null)
             {
                 return NotFound();
@@ -133,7 +135,7 @@ namespace WebAPI_001.Controllers
 
         private bool CustomersExists(string id)
         {
-            return _context.Customers.Any(e => e.CustomerId == id);
+            return _context.Customers.Any(e => e.CustomerID == id);
         }
     }
 }
