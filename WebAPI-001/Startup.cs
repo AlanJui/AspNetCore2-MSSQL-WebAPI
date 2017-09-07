@@ -11,6 +11,7 @@ using Microsoft.Extensions.Options;
 
 using WebAPI_001.Models;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.AspNetCore.HttpOverrides;
 
 namespace WebAPI_001
 {
@@ -38,6 +39,14 @@ namespace WebAPI_001
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app, IHostingEnvironment env)
         {
+            // Use a reverse proxy server
+            app.UseForwardedHeaders(new ForwardedHeadersOptions
+            {
+                ForwardedHeaders = ForwardedHeaders.XForwardedFor | ForwardedHeaders.XForwardedProto
+            });
+
+            app.UseAuthentication();
+
             // Should be before calling app.UseMvc() and app.UseStaticFiles()
             app.UseCors(builder => builder
                 .AllowAnyOrigin()
