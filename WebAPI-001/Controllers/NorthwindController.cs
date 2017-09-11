@@ -32,6 +32,23 @@ namespace WebAPI_001.Controllers
             return DataSourceLoader.Load(_nwind.Orders, loadOptions);
         }
 
+        [HttpGet("order-details/{orderID}")]
+        public object GetOrderDetails([FromRoute] int orderID, DataSourceLoadOptions options)
+        {
+            return DataSourceLoader.Load(
+                from i in _nwind.Order_Details
+                where i.OrderID == orderID
+                select new
+                {
+                    Product = i.Product.ProductName,
+                    Price = i.UnitPrice,
+                    Quantity = i.Quantity,
+                    Sum = i.UnitPrice * i.Quantity
+                },
+                options
+            );
+        }
+
         [HttpGet("order-details")]
         public object OrderDetails(int orderID, DataSourceLoadOptions options)
         {
