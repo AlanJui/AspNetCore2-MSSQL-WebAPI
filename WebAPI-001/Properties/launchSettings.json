@@ -1,49 +1,24 @@
 {
-    "iisSettings": {
-        "windowsAuthentication": false,
-        "anonymousAuthentication": true,
-        "iisExpress": {
-            "applicationUrl": "http://localhost:5566/",
-            "sslPort": 0
-        }
-    },
   "profiles": {
-    "IIS Express": {
-      "commandName": "IISExpress",
-      "launchBrowser": true,
-      "launchUrl": "api/Orders",
-      "environmentVariables": {
-        "ASPNETCORE_ENVIRONMENT": "Development"
-      }
-    },
-    "WebAPI (DEV)": {
-      "commandName": "Project",
-      "launchBrowser": true,
-      "launchUrl": "api/Orders",
-      "environmentVariables": {
-        "ASPNETCORE_ENVIRONMENT": "Development"
-      },
-      "applicationUrl": "http://0.0.0.0:5000/"
-    },
-    "WebAPI (Staging)": {
+    "WebAPI - Staging": {
       "commandName": "Project",
       "launchBrowser": true,
       "launchUrl": "api/Orders",
       "environmentVariables": {
         "ASPNETCORE_ENVIRONMENT": "Staging"
       },
-      "applicationUrl": "http://0.0.0.0:5555/"
+      "applicationUrl": "http://0.0.0.0:3000/"
     },
-    "WebAPI (QA)": {
+    "WebAPI - QA": {
       "commandName": "Project",
       "launchBrowser": true,
       "launchUrl": "api/Orders",
       "environmentVariables": {
         "ASPNETCORE_ENVIRONMENT": "QA"
       },
-      "applicationUrl": "http://0.0.0.0:5555/"
+      "applicationUrl": "http://0.0.0.0:4000/"
     },
-    "WebAPI (Production)": {
+    "WebAPI - Production": {
       "commandName": "Project",
       "launchBrowser": true,
       "launchUrl": "api/Orders",
@@ -51,6 +26,15 @@
         "ASPNETCORE_ENVIRONMENT": "Production"
       },
       "applicationUrl": "http://0.0.0.0:5000/"
+    },
+    "WebAPI - Development": {
+      "commandName": "Project",
+      "launchBrowser": true,
+      "launchUrl": "api/Orders",
+      "environmentVariables": {
+        "ASPNETCORE_ENVIRONMENT": "Development"
+      },
+      "applicationUrl": "http://0.0.0.0:2000/"
     }
   }
 }
