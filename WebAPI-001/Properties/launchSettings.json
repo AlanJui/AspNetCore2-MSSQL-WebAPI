@@ -25,6 +25,15 @@
       },
       "applicationUrl": "http://0.0.0.0:5000/"
     },
+    "WebAPI (Staging)": {
+      "commandName": "Project",
+      "launchBrowser": true,
+      "launchUrl": "api/Orders",
+      "environmentVariables": {
+        "ASPNETCORE_ENVIRONMENT": "Staging"
+      },
+      "applicationUrl": "http://0.0.0.0:5555/"
+    },
     "WebAPI (QA)": {
       "commandName": "Project",
       "launchBrowser": true,
