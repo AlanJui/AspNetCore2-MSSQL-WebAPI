@@ -18,16 +18,7 @@
       },
       "applicationUrl": "http://0.0.0.0:5100/"
     },
-    "WebAPI - QA": {
-      "commandName": "Project",
-      "launchBrowser": true,
-      "launchUrl": "api/Orders",
-      "environmentVariables": {
-        "ASPNETCORE_ENVIRONMENT": "QA"
-      },
-      "applicationUrl": "http://0.0.0.0:4000/"
-    },
-    "WebAPI - Development": {
+    "WebAPI-Development": {
       "commandName": "Project",
       "launchBrowser": true,
       "launchUrl": "api/Orders",
