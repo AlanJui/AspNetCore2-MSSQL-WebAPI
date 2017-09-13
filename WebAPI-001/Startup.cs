@@ -21,6 +21,8 @@ namespace WebAPI_001
 
         public Startup(IConfiguration configuration)
         {
+            Console.WriteLine(@"Configuration[""urls""] = ""{0}""", configuration["urls"]);
+
             Configuration = configuration;
         }
 

@@ -1,5 +1,14 @@
 {
   "profiles": {
+    "WebAPI - Production": {
+      "commandName": "Project",
+      "launchBrowser": true,
+      "launchUrl": "api/Orders",
+      "environmentVariables": {
+        "ASPNETCORE_ENVIRONMENT": "Production"
+      },
+      "applicationUrl": "http://0.0.0.0:5000/"
+    },
     "WebAPI - Staging": {
       "commandName": "Project",
       "launchBrowser": true,
@@ -7,7 +16,7 @@
       "environmentVariables": {
         "ASPNETCORE_ENVIRONMENT": "Staging"
       },
-      "applicationUrl": "http://0.0.0.0:3000/"
+      "applicationUrl": "http://0.0.0.0:5100/"
     },
     "WebAPI - QA": {
       "commandName": "Project",
@@ -17,15 +26,6 @@
         "ASPNETCORE_ENVIRONMENT": "QA"
       },
       "applicationUrl": "http://0.0.0.0:4000/"
-    },
-    "WebAPI - Production": {
-      "commandName": "Project",
-      "launchBrowser": true,
-      "launchUrl": "api/Orders",
-      "environmentVariables": {
-        "ASPNETCORE_ENVIRONMENT": "Production"
-      },
-      "applicationUrl": "http://0.0.0.0:5000/"
     },
     "WebAPI - Development": {
       "commandName": "Project",
